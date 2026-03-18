@@ -23,13 +23,18 @@
 		color: #b30000;
 	}
 
-	.btn-primary{
+	.btn{
+		color: white;
 		background-color: #ff5733;
-		border: none;
+		border-width: 5px;
+		border-color: #d44013;
 	}
 
-	.btn-primary:hover{
-		background-color: #e64a19;
+	.btn:hover{
+		color: white;
+		background-color: #b3350e;
+		border-width: 5px;
+		border-color: #d44013;
 	}
 
 	label{
@@ -48,26 +53,25 @@
 		<h1 class="text-center mb-3">Heat Index Checker</h1>
 
 
-		<details ontoggle="showMsg()" class="mb-3">
-			<summary class="fw-bold">Show Instructions</summary>
-			<p id="instruct" class="mt-2 text-center"></p>
-		</details>
+<details ontoggle="showMsg()" class="mb-3">
+<summary class="fw-bold">Show Instructions</summary>
+<p id="instruct" class="mt-2 text-center"></p>
+<</details>
 
 
-		<div class="mb-3">
-			<label class="form-label">Temperature (°C):</label>
-			<input type="number" id="temp" class="form-control">
+<div class="mb-3">
+	<label class="form-label">Temperature (°C):</label>
+	<input type="number" id="temp" class="form-control">
 		</div>
 
-		<div class="mb-3">
+<div class="mb-3">
 			<label class="form-label">Humidity (%):</label>
 			<input type="number" id="humid" class="form-control">
 		</div>
 
-		<!-- Button -->
 		<div class="text-center">
-			<button onclick="CheckHI()" class="btn btn-primary px-4">
-				Check
+			<button onclick="CheckHI()" class="btn px-4">
+				Compute
 			</button>
 		</div>
 
@@ -91,7 +95,7 @@
 
 		var heatindex = temp + (0.33 * humid) - 4;
 
-		heatindex = heatindex.toFixed(1);
+		var hi = heatindex.toFixed(1);
 
 		var message = "";
 
@@ -115,7 +119,7 @@
 				message = "Heat Index cannot be determined.";
 		}
 
-		alert("Heat Index: " + heatindex + "°C\nStatus: " + message);
+		alert("Heat Index: " + hi + "°C\nStatus: " + message);
 	}
 </script>
 
